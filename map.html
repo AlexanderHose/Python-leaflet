@@ -26,6 +26,7 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 		
 		for (var i = 0; i < obj.length; i++){
 			marker = new L.marker([obj[i][0]['geometry']['location']['lat'], obj[i][0]['geometry']['location']['lng']]).addTo(map);
+			marker.bindPopup(obj[i][0]['address_components'][0]['long_name']);
 		}
 	}
       r.readAsText(f);
